@@ -133,15 +133,6 @@ admin-dashboard-rbac/
 - **DELETE /admin/urls/delete/:urlId**
   - Delete a specific URL.
 
-## Screenshots
-
-### Dashboard Overview
-
-![Dashboard Screenshot](#) *(Add a screenshot)*
-
-### URL Management
-
-![URL Management Screenshot](#) *(Add a screenshot)*
 
 ## Future Enhancements
 
