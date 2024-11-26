@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 70px;
+  }
+  
+  .dashboard-container p{
+    color: rgb(51, 51, 51);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  h2 {
+    text-align: start;
+    color: rgb(31, 169, 185);
+  }
+  
+  .users-container {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .mailhead{
+    font-size: 18px;
+    padding: 8px 0px;
+  }
+  
+  .user-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    min-height: 150px; 
+    height: auto;
+  }
+
+  .user-card p{
+    font-size: 18px;
+  }
+  
+  .urls-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 10px; 
+    
+  }
+  
+  .url-card {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    min-height:300px ;
+    height: auto;
+    position: relative;
+  }
+  .url-card p{
+    font-size: 14px;
+  }
+  
+  button {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    width: fit-content;
+    background-color: rgb(31, 169, 185);
+    
+  }
+  
+  button:hover {
+   background-color: rgb(31, 82, 87);
+  }
+  
+  .delete-button {
+    background-color: #e74c3c;
+    color: white;
+  }
+  .delete-button:hover {
+    background-color: #9e281b;
+    color: white;
+  }
+  
+  .update-button {
+    background-color: rgb(31, 169, 185);
+    color: white;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .deleteurl{
+    background-color: rgb(31, 169, 185);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: white;
+  }
+  .deleteurl:hover {
+    background-color: rgb(31, 82, 87);
+    color: white;
+  }
+  
+  .loader {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    padding: 20px;
+  }
+
+
+  .urls-container p {
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+}
+
+  
+  @media (max-width: 768px) {
+    .users-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .user-card {
+      width: 100%;
+      max-width: 500px;
+      font-size: 15px ;
+    }
+    .mailhead{
+        font-size: 14px;
+        padding: 1px 0px;
+      }
+      h2 {
+        font-size: 15px;
+      }
+
+      .delete-button {
+       padding: 5px;
+       margin:5px 0px
+      }
+
+      .url-card {
+        min-height:220px ;
+      }
+      
+  }
+  

@@ -1,0 +1,270 @@
+
+.url-shortener {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.box {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  padding: 1.5rem;
+  background-color: #ffffff;
+  margin-bottom: 1.5rem;
+  margin-top: 4rem;
+}
+
+.error {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.url-shortener h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.url-shortener form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.url-shortener input {
+  padding: 0.75rem;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  background-color: rgb(31, 169, 185);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1e9db4;
+}
+
+
+.shortened-urls-wrapper {
+  overflow-x: auto;
+}
+
+.shortened-urls {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+
+.shortened-urls th,
+.shortened-urls td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: left;
+  white-space: nowrap; 
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shortened-urls th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+}
+
+.shortened-urls td a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shortened-urls td a:hover {
+  color: #00506a;
+}
+
+.icons {
+  color: black;
+  font-size: 1.8rem;
+  transition: color 0.2s ease;
+}
+
+.icons:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.popup-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  z-index: 1001;
+  animation: popupFadeIn 0.5s ease;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.make-payment-button {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(255, 75, 43, 0.5);
+  margin-top: 20px;
+}
+
+.make-payment-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+
+.make-payment-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.msg {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.NoUrl {
+  margin-top: 200px;
+  font-weight: 600;
+  font-size: large;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .shortened-urls {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .shortened-urls th,
+  .shortened-urls td {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+  .shortened-urls-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+
+@keyframes popupFadeIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.btn:focus,
+.make-payment-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(31, 169, 185, 0.8);
+}
+
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.loader {
+  border: 8px solid #f3f3f3; 
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.dimmed {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: blur(1px);
+}
