@@ -15,13 +15,15 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const loggedInUserId = parseJwt(token).id;
-      
 
-      const response = await axios.get("https://urlshortner-rbac.onrender.com/admin/users", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.get(
+        "https://urlshortner-rbac.onrender.com/admin/users",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       const filteredUsers = response.data.filter(
         (user) => user._id !== loggedInUserId
@@ -37,13 +39,16 @@ const AdminDashboard = () => {
   const deleteUser = async (userId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`https://urlshortner-rbac.onrender.com/admin/users/${userId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await axios.delete(
+        `https://urlshortner-rbac.onrender.com/admin/users/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       alert("User deleted successfully");
-      fetchUsers(); 
+      fetchUsers();
     } catch (err) {
       alert("Failed to delete user", err);
     }
@@ -71,11 +76,14 @@ const AdminDashboard = () => {
   const deleteUrl = async (urlId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`https://urlshortner-rbac.onrender.com/admin/urls/delete/${urlId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await axios.delete(
+        `https://urlshortner-rbac.onrender.com/admin/urls/delete/${urlId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       alert("URL deleted successfully");
       fetchUsers();
     } catch (error) {
@@ -91,7 +99,13 @@ const AdminDashboard = () => {
     }
   };
 
-  if (loading) return <div className="loader">Loading...</div>;
+  if (loading) {
+    return (
+      <div className="loader-overlay">
+        <div className="loader"></div>
+      </div>
+    );
+  }
   if (error) return <div className="error">{error}</div>;
 
   return (
