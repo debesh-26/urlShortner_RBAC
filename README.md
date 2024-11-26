@@ -22,7 +22,7 @@ The application is built with **React** for the frontend and **Node.js (Express)
 ## Demo
 
 ### Deployed Link
-[[Admin Dashboard Live](https://url-shortner-rbac.vercel.app/)](#) *(Update this with the deployed link)*
+[[ Live Link](https://url-shortner-rbac.vercel.app/)](#)
 
 ## Technologies Used
 
