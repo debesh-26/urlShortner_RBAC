@@ -17,7 +17,7 @@ const Register = () => {
     setloading(true);
 
     try {
-      await axios.post("http://localhost:3000/auth/register", {
+      await axios.post("https://urlshortner-rbac.onrender.com/auth/register", {
         email,
         password,
         role,

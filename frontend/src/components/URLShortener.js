@@ -17,7 +17,7 @@ const URLShortener = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "http://localhost:3000/url/user",
+        "https://urlshortner-rbac.onrender.com/url/user",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ const URLShortener = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:3000/url",
+        "https://urlshortner-rbac.onrender.com/url",
         { url },
         {
           headers: {
@@ -86,7 +86,7 @@ const URLShortener = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "http://localhost:3000/create-checkout-session",
+        "https://urlshortner-rbac.onrender.com/create-checkout-session",
         {},
         {
           headers: {
@@ -109,7 +109,7 @@ const URLShortener = () => {
         order_id: response.data.orderId,
         handler: async function (paymentResponse) {
           await axios.post(
-            "http://localhost:3000/payment/payment-success",
+            "https://urlshortner-rbac.onrender.com/payment/payment-success",
             {
               paymentId: paymentResponse.razorpay_payment_id,
             },
@@ -146,7 +146,7 @@ const URLShortener = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `http://localhost:3000/url/analytics/${shortId}`,
+        `https://urlshortner-rbac.onrender.com/url/analytics/${shortId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -176,7 +176,7 @@ const URLShortener = () => {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:3000/url/${id}`, {
+      await axios.delete(`https://urlshortner-rbac.onrender.com/url/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -264,12 +264,12 @@ const URLShortener = () => {
               <tr key={index}>
                 <td>
                   <a
-                    href={`http://localhost:3000/${url.shortid}`}
+                    href={`https://urlshortner-rbac.onrender.com/${url.shortid}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => handleLinkClick(url.shortid)}
                   >
-                    {`http://localhost:3000/${url.shortid}`}
+                    {`https://urlshortner-rbac.onrender.com/${url.shortid}`}
                   </a>
                 </td>
                 <td>{url.redirectUrl}</td>

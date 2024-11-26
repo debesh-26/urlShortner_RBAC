@@ -17,7 +17,7 @@ const AdminDashboard = () => {
       const loggedInUserId = parseJwt(token).id;
       
 
-      const response = await axios.get("http://localhost:3000/admin/users", {
+      const response = await axios.get("https://urlshortner-rbac.onrender.com/admin/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
   const deleteUser = async (userId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:3000/admin/users/${userId}`, {
+      await axios.delete(`https://urlshortner-rbac.onrender.com/admin/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -53,7 +53,7 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:3000/admin/urls/${urlId}`,
+        `https://urlshortner-rbac.onrender.com/admin/urls/${urlId}`,
         { shortid: newShortid, redirectUrl: newRedirectUrl },
         {
           headers: {
@@ -71,7 +71,7 @@ const AdminDashboard = () => {
   const deleteUrl = async (urlId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:3000/admin/urls/delete/${urlId}`, {
+      await axios.delete(`https://urlshortner-rbac.onrender.com/admin/urls/delete/${urlId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

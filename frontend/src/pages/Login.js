@@ -15,7 +15,7 @@ const Login = ({ setisAuthenticated }) => {
     e.preventDefault();
     setloading(true)
     try {
-      const response = await axios.post("http://localhost:3000/auth/login", {
+      const response = await axios.post("https://urlshortner-rbac.onrender.com/auth/login", {
         email,
         password,
       });
